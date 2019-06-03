@@ -28,6 +28,7 @@ def make_dublin_core_xml(title_value, author_value, date_value):
     author.text = author_value
     date.text = date_value
     return root
+# Check SAF formatting from DSpace Documentation #
 
 def make_etd_metadata(department_value, degree_level_value, degree_institution):
     root = ET.Element("dublin_core")
