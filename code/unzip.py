@@ -3,7 +3,7 @@ import re
 from os import scandir, mkdir
 import zipfile
 
-directory = "X:/ETDs"
+directory = "user/etds/pq"
 
 contents = scandir(directory)
 
@@ -11,7 +11,7 @@ for f in contents:
     if f.name.endswith('.zip'):
         #zip_ref = zipfile.ZipFile(f.path, 'r')
         dirname = re.compile('(etdadmin_upload_\d{6})').search(f.name).group(1)
-        path_root = "X:/ETDS"
+        path_root = "./unzipped"
         new_directory = join(path_root, dirname)
         if not(exists(new_directory)):
             mkdir(new_directory)
