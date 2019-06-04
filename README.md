@@ -1,4 +1,5 @@
-# ProQuest ETDs to Simple Archive Format 
+# ProQuest ETDs to DSpace
+
 ## 3 June 2019
 
 This project was forked from an earlier [@uchicago-library project](https://github.com/uchicago-library/DSpace-export-of-ETDs)
