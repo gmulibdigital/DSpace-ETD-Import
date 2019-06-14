@@ -1,4 +1,4 @@
-
+#!/usr/bin/env python
 import csv
 from os import scandir, path, mkdir
 from sys import stderr, stdout
@@ -7,11 +7,11 @@ from xml.etree import ElementTree as ET
 import re
 import shutil
 
-directory = "X:/ETDs"
+directory = "./tmp"
 
 contents = scandir(directory)
 
-saf_path_root = "C:/Users/tdanstrom/Documents/etds_safs/"
+saf_path_root = "./tmp/saf"
 
 def make_dublin_core_xml(title_value, author_value, date_value):
     root = ET.Element("dublin_core")

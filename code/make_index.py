@@ -3,7 +3,7 @@ from os import scandir
 from sys import stderr, stdout
 from xml.etree import ElementTree as ET
 
-directory = "X:/ETDs"
+directory = "/Users/akierig/dspace_etd/bozo/unzipped"
 
 contents = scandir(directory)
 
@@ -60,7 +60,7 @@ for n in contents:
                 count += 1
 
 
-with open("X:/ETDS/pots.csv", "w") as writingfile:
+with open("/Users/akierig/dspace_etd/saf/dspace.csv", "w") as writingfile:
     aWriter = csv.writer(writingfile,
                             delimiter=',',
                             quotechar='"',

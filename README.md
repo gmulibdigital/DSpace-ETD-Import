@@ -1,13 +1,3 @@
-# ProQuest ETDs to DSpace
-
-## 3 June 2019
-
-This project was forked from an earlier [@uchicago-library project](https://github.com/uchicago-library/DSpace-export-of-ETDs)
-
-The original README.md is below until I have more time to rewrite it.
-
-
-------
 # Introduction
 
 The IR manager needs to import 201 dissertations into DSpace from the following quarters
