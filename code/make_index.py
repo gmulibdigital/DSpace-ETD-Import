@@ -19,9 +19,11 @@ for n in contents:
                 xml_root = xml_doc.getroot()
                 title = xml_root.find("DISS_description/DISS_title")
                 author_fname = xml_root.find("DISS_authorship/DISS_author[@type='primary']/DISS_name/DISS_fname")
+                author_middle = xml_root.find("DISS_authorship/DISS_author[@type='primary']/DISS_name/DISS_middle")
                 author_surname = xml_root.find("DISS_authorship/DISS_author[@type='primary']/"+"DISS_name/DISS_surname")
-                inst_contact = xml_root.find("DISS_description/DISS_institution/DISS_inst_contact")
 
+                inst_contact = xml_root.find("DISS_description/DISS_institution/DISS_inst_contact")
+				
 
                 comp_date = xml_root.find("DISS_description/DISS_dates/DISS_comp_date")
                 license = xml_root.find("DISS_creative_commons_license/DISS_abbreviation")
@@ -31,6 +33,10 @@ for n in contents:
                     title_text = title.text.encode('utf-8')
                 else:
                     title_text = b"null"
+                if author_fname != None and author_surname != None:
+                    author_text = author_fname.text.encode('utf-8') + b" " + author_surname.text.encode('utf-8')
+                else:
+                    author_text = b"null"
                 if author_fname != None and author_surname != None:
                     author_text = author_fname.text.encode('utf-8') + b" " + author_surname.text.encode('utf-8')
                 else:
