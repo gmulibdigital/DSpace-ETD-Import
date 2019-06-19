@@ -74,6 +74,7 @@ with open("/Users/akierig/dspace_etd/saf/dspace.csv", "w") as writingfile:
     aWriter.writerow([
                   "title", "author", "comp_date", "inst_contact", "license",
                   "acceptance_text", "sales_restriction"
+# Add new variables to line above #
                  ])
     for line in all_lines:
         aWriter.writerow(line)
