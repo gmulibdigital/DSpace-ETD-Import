@@ -17,7 +17,12 @@ for n in contents:
             if p.name.endswith('.xml'):
                 xml_doc = ET.parse(p.path)
                 xml_root = xml_doc.getroot()
+                embargo = xml_root.find("<DISS_submission/embargo_code")
+                advisorl = xml_root.find("<DISS_advisor>/DISS_name/DISS_surname")
+                advisorf = xml_root.find ("<DISS_advisor>/DISS_name/DISS_fname")
+                advisorm = xml_root.find (<DISS_advisor>DISS_middle)
                 title = xml_root.find("DISS_description/DISS_title")
+
                 author_fname = xml_root.find("DISS_authorship/DISS_author[@type='primary']/DISS_name/DISS_fname")
                 author_middle = xml_root.find("DISS_authorship/DISS_author[@type='primary']/DISS_name/DISS_middle")
                 author_surname = xml_root.find("DISS_authorship/DISS_author[@type='primary']/"+"DISS_name/DISS_surname")

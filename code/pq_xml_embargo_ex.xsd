@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="DISS_submission" type="DISS_submissionType"/>
+  <xs:complexType name="DISS_nameType">
+    <xs:sequence>
+      <xs:element name="DISS_surname">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Alwadeai"/>
+            <xs:enumeration value="Keyser"/>
+            <xs:enumeration value="Guccione"/>
+            <xs:enumeration value="O’Connell"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="DISS_fname">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Khalid"/>
+            <xs:enumeration value="Randall"/>
+            <xs:enumeration value="Andrew"/>
+            <xs:enumeration value="Dennis"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="DISS_middle">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Saeed"/>
+            <xs:enumeration value="E."/>
+            <xs:enumeration value="A."/>
+            <xs:enumeration value="G."/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="xs:string" name="DISS_suffix" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISS_phone_faxType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="DISS_cntry_cd"/>
+      <xs:element type="xs:string" name="DISS_area_code"/>
+      <xs:element type="xs:string" name="DISS_phone_num"/>
+      <xs:element type="xs:string" name="DISS_phone_ext"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="type" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="DISS_addressType">
+    <xs:sequence>
+      <xs:element name="DISS_addrline" maxOccurs="unbounded" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="2750 Gallows Rd"/>
+            <xs:enumeration value="APT#434"/>
+            <xs:enumeration value="Olaya Street"/>
+            <xs:enumeration value="P.O BOX 295086"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="DISS_city">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Vienaa"/>
+            <xs:enumeration value="Riyadh"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="DISS_st">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="VA"/>
+            <xs:enumeration value="Riyadh"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="DISS_pcode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="22180"/>
+            <xs:enumeration value="11351"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="DISS_country">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="US"/>
+            <xs:enumeration value="SA"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISS_contactType">
+    <xs:sequence>
+      <xs:element name="DISS_contact_effdt">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="04/30/2019"/>
+            <xs:enumeration value="07/05/2019"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="DISS_phone_faxType" name="DISS_phone_fax"/>
+      <xs:element type="DISS_addressType" name="DISS_address"/>
+      <xs:element type="xs:string" name="DISS_email"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="type" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="DISS_authorType">
+    <xs:sequence>
+      <xs:element type="DISS_nameType" name="DISS_name"/>
+      <xs:element type="DISS_contactType" name="DISS_contact" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="xs:string" name="DISS_citizenship"/>
+      <xs:element type="xs:string" name="DISS_orcid"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="type"/>
+  </xs:complexType>
+  <xs:complexType name="DISS_authorshipType">
+    <xs:sequence>
+      <xs:element type="DISS_authorType" name="DISS_author"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISS_datesType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="DISS_comp_date"/>
+      <xs:element type="xs:string" name="DISS_accept_date"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISS_institutionType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="DISS_inst_code"/>
+      <xs:element type="xs:string" name="DISS_inst_name"/>
+      <xs:element type="xs:string" name="DISS_inst_contact"/>
+      <xs:element type="xs:string" name="DISS_processing_code"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISS_advisorType">
+    <xs:sequence>
+      <xs:element type="DISS_nameType" name="DISS_name"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISS_cmte_memberType">
+    <xs:sequence>
+      <xs:element type="DISS_nameType" name="DISS_name"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISS_categoryType">
+    <xs:sequence>
+      <xs:element name="DISS_cat_code">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="0719"/>
+            <xs:enumeration value="0575"/>
+            <xs:enumeration value="0382"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="DISS_cat_desc">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Physiology"/>
+            <xs:enumeration value="Kinesiology"/>
+            <xs:enumeration value="Physical therapy"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISS_categorizationType">
+    <xs:sequence>
+      <xs:element type="DISS_categoryType" name="DISS_category" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="xs:string" name="DISS_keyword"/>
+      <xs:element type="xs:string" name="DISS_language"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISS_descriptionType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="DISS_title"/>
+      <xs:element type="DISS_datesType" name="DISS_dates"/>
+      <xs:element type="xs:string" name="DISS_degree"/>
+      <xs:element type="DISS_institutionType" name="DISS_institution"/>
+      <xs:element type="DISS_advisorType" name="DISS_advisor"/>
+      <xs:element type="DISS_cmte_memberType" name="DISS_cmte_member" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="DISS_categorizationType" name="DISS_categorization"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="page_count"/>
+    <xs:attribute type="xs:string" name="type"/>
+    <xs:attribute type="xs:string" name="external_id"/>
+    <xs:attribute type="xs:string" name="apply_for_copyright"/>
+  </xs:complexType>
+  <xs:complexType name="DISS_abstractType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="DISS_para"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISS_binaryType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="type"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="DISS_contentType">
+    <xs:sequence>
+      <xs:element type="DISS_abstractType" name="DISS_abstract"/>
+      <xs:element type="xs:string" name="DISS_supp_abstract"/>
+      <xs:element type="DISS_binaryType" name="DISS_binary"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISS_sales_restrictionType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="code"/>
+        <xs:attribute type="xs:string" name="remove"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="DISS_restrictionType">
+    <xs:sequence>
+      <xs:element type="DISS_sales_restrictionType" name="DISS_sales_restriction"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISS_repositoryType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="DISS_version"/>
+      <xs:element type="xs:string" name="DISS_agreement_decision_date"/>
+      <xs:element type="xs:string" name="DISS_acceptance"/>
+      <xs:element type="xs:string" name="DISS_delayed_release"/>
+      <xs:element type="xs:string" name="DISS_access_option"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DISS_submissionType">
+    <xs:sequence>
+      <xs:element type="DISS_authorshipType" name="DISS_authorship"/>
+      <xs:element type="DISS_descriptionType" name="DISS_description"/>
+      <xs:element type="DISS_contentType" name="DISS_content"/>
+      <xs:element type="DISS_restrictionType" name="DISS_restriction"/>
+      <xs:element type="DISS_repositoryType" name="DISS_repository"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="publishing_option"/>
+    <xs:attribute type="xs:string" name="embargo_code"/>
+    <xs:attribute type="xs:string" name="third_party_search"/>
+  </xs:complexType>
+</xs:schema>
