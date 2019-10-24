@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE DISS_submission [
+        <!ELEMENT DISS_submission (DISS_authorship|DISS_description|DISS_content|DISS_restriction|DISS_repository)*>
+        <!ATTLIST DISS_submission
+                publishing_option CDATA #REQUIRED
+                embargo_code CDATA #REQUIRED
+                third_party_search CDATA #REQUIRED>
+        <!ELEMENT DISS_authorship (DISS_author)*>
+        <!ELEMENT DISS_author (DISS_name|DISS_contact|DISS_citizenship|DISS_orcid)*>
+        <!ATTLIST DISS_author
+                type CDATA #REQUIRED>
+        <!ELEMENT DISS_name (DISS_surname|DISS_fname|DISS_middle|DISS_suffix)*>
+        <!ELEMENT DISS_surname (#PCDATA)>
+        <!ELEMENT DISS_fname (#PCDATA)>
+        <!ELEMENT DISS_middle (#PCDATA)>
+        <!ELEMENT DISS_suffix (#PCDATA)>
+        <!ELEMENT DISS_contact (DISS_contact_effdt|DISS_phone_fax|DISS_address|DISS_email)*>
+        <!ATTLIST DISS_contact
+                type CDATA #REQUIRED>
+        <!ELEMENT DISS_contact_effdt (#PCDATA)>
+        <!ELEMENT DISS_phone_fax (DISS_cntry_cd|DISS_area_code|DISS_phone_num|DISS_phone_ext)*>
+        <!ATTLIST DISS_phone_fax
+                type CDATA #REQUIRED>
+        <!ELEMENT DISS_cntry_cd (#PCDATA)>
+        <!ELEMENT DISS_area_code (#PCDATA)>
+        <!ELEMENT DISS_phone_num (#PCDATA)>
+        <!ELEMENT DISS_phone_ext (#PCDATA)>
+        <!ELEMENT DISS_address (DISS_addrline|DISS_city|DISS_st|DISS_pcode|DISS_country)*>
+        <!ELEMENT DISS_addrline (#PCDATA)>
+        <!ELEMENT DISS_city (#PCDATA)>
+        <!ELEMENT DISS_st (#PCDATA)>
+        <!ELEMENT DISS_pcode (#PCDATA)>
+        <!ELEMENT DISS_country (#PCDATA)>
+        <!ELEMENT DISS_email (#PCDATA)>
+        <!ELEMENT DISS_citizenship (#PCDATA)>
+        <!ELEMENT DISS_orcid (#PCDATA)>
+        <!ELEMENT DISS_description (DISS_title|DISS_dates|DISS_degree|DISS_institution|DISS_advisor|DISS_cmte_member|DISS_categorization)*>
+        <!ATTLIST DISS_description
+                page_count CDATA #REQUIRED
+                type CDATA #REQUIRED
+                external_id CDATA #REQUIRED
+                apply_for_copyright CDATA #REQUIRED>
+        <!ELEMENT DISS_title (#PCDATA)>
+        <!ELEMENT DISS_dates (DISS_comp_date|DISS_accept_date)*>
+        <!ELEMENT DISS_comp_date (#PCDATA)>
+        <!ELEMENT DISS_accept_date (#PCDATA)>
+        <!ELEMENT DISS_degree (#PCDATA)>
+        <!ELEMENT DISS_institution (DISS_inst_code|DISS_inst_name|DISS_inst_contact|DISS_processing_code)*>
+        <!ELEMENT DISS_inst_code (#PCDATA)>
+        <!ELEMENT DISS_inst_name (#PCDATA)>
+        <!ELEMENT DISS_inst_contact (#PCDATA)>
+        <!ELEMENT DISS_processing_code (#PCDATA)>
+        <!ELEMENT DISS_advisor (DISS_name)*>
+        <!ELEMENT DISS_cmte_member (DISS_name)*>
+        <!ELEMENT DISS_categorization (DISS_category|DISS_keyword|DISS_language)*>
+        <!ELEMENT DISS_category (DISS_cat_code|DISS_cat_desc)*>
+        <!ELEMENT DISS_cat_code (#PCDATA)>
+        <!ELEMENT DISS_cat_desc (#PCDATA)>
+        <!ELEMENT DISS_keyword (#PCDATA)>
+        <!ELEMENT DISS_language (#PCDATA)>
+        <!ELEMENT DISS_content (DISS_abstract|DISS_supp_abstract|DISS_binary)*>
+        <!ELEMENT DISS_abstract (DISS_para)*>
+        <!ELEMENT DISS_para (#PCDATA)>
+        <!ELEMENT DISS_supp_abstract (#PCDATA)>
+        <!ELEMENT DISS_binary (#PCDATA)>
+        <!ATTLIST DISS_binary
+                type CDATA #REQUIRED>
+        <!ELEMENT DISS_restriction (DISS_sales_restriction)*>
+        <!ELEMENT DISS_sales_restriction (#PCDATA)>
+        <!ATTLIST DISS_sales_restriction
+                code CDATA #REQUIRED
+                remove CDATA #REQUIRED>
+        <!ELEMENT DISS_repository (DISS_version|DISS_agreement_decision_date|DISS_acceptance|DISS_delayed_release|DISS_access_option)*>
+        <!ELEMENT DISS_version (#PCDATA)>
+        <!ELEMENT DISS_agreement_decision_date (#PCDATA)>
+        <!ELEMENT DISS_acceptance (#PCDATA)>
+        <!ELEMENT DISS_delayed_release (#PCDATA)>
+        <!ELEMENT DISS_access_option (#PCDATA)>
+        ]>
