@@ -3,7 +3,8 @@ from os import scandir
 from sys import stderr, stdout
 from xml.etree import ElementTree as ET
 
-directory = "/Users/akierig/dspace_etd/bozo/unzipped"
+# following `unzip.py`, enter directory containing the unzipped ETDs
+directory = "/foo/bar"
 
 contents = scandir(directory)
 
@@ -26,8 +27,8 @@ for n in contents:
                 author_surname = xml_root.find("DISS_authorship/DISS_author[@type='primary']/"+"DISS_name/DISS_surname")
                 date = xml_root.find("DISS_description/DISS_dates/DISS_comp_date")
                 abstract = xml_root.find("DISS_abstract")
-                extent = xml_root.find("")
-
+                extent = xml_root.find("DISS_description[@page_count]")
+				lang = xml_root.find("DISS_language")
                 inst_contact = xml_root.find("DISS_description/DISS_institution/DISS_inst_contact")
 				
                 title = xml_root.find("DISS_description/DISS_title")
@@ -73,7 +74,7 @@ for n in contents:
                 count += 1
 
 
-with open("/Users/akierig/dspace_etd/saf/dspace.csv", "w") as writingfile:
+with open("/foo/bar/dspace.csv", "w") as writingfile:
     aWriter = csv.writer(writingfile,
                             delimiter=',',
                             quotechar='"',
